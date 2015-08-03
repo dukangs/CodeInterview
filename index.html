@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Codeinterview : [LeetCode 107] Binary Tree Level Order Traversal II">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Codeinterview</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dukangs/CodeInterview">View on GitHub</a>
+
+          <h1 id="project_title">Codeinterview</h1>
+          <h2 id="project_tagline">[LeetCode 107] Binary Tree Level Order Traversal II</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dukangs/CodeInterview/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dukangs/CodeInterview/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Question</p>
+
+<p>link</p>
+
+<p>Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
+
+<p>For example:
+Given binary tree {3,9,20,#,#,15,7},
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its bottom-up level order traversal as:
+[
+  [15,7]
+  [9,20],
+  [3],
+]
+Stats</p>
+
+<p>Frequency   1
+Difficulty  3
+Adjusted Difficulty 1
+Time to use ———-
+Ratings/Color = 1(white) 2(lime) 3(yellow) 4/5(red)</p>
+
+<p>Analysis</p>
+
+<p>This is the same question as previous one.</p>
+
+<p>Solution</p>
+
+<p>There are also 2 solution: BFS and DFS.</p>
+
+<p>I post BFS code below. Only 2 lines are different: ans.get() and ans.add().</p>
+
+<p>Code</p>
+
+<p>public ArrayList&gt; levelOrderBottom(TreeNode root) {
+    ArrayList&gt; ans = new ArrayList&gt;();
+    if (root == null) return ans;
+    Queue q = new LinkedList();
+    q.add(root);
+    while (! q.isEmpty()) {
+        ans.add(0, new ArrayList());
+        int curSize = q.size();
+        for (int i = 0; i &lt; curSize; i ++) {
+            TreeNode node = q.remove();
+            ans.get(0).add(node.val);
+            if (node.left != null) q.add(node.left);
+            if (node.right != null) q.add(node.right);
+        }
+    }
+    return ans;
+}</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Codeinterview maintained by <a href="https://github.com/dukangs">dukangs</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
